@@ -15,10 +15,12 @@ import Select from '@mui/material/Select';
 import Grid from '@mui/material/Unstable_Grid2';
 
 const states = [
-  { value: 'alabama', label: 'Alabama' },
-  { value: 'new-york', label: 'New York' },
-  { value: 'san-francisco', label: 'San Francisco' },
-  { value: 'los-angeles', label: 'Los Angeles' },
+  { value: 'jatim', label: 'Jawa Timur' },
+  { value: 'jabar', label: 'Jawa Barat' },
+  { value: 'jakarta', label: 'DKI Jakarta' },
+  { value: 'jateng', label: 'Jawa Tengah' },
+  { value: 'sulteng', label: 'Sulawesi Tengah' },
+  { value: 'bali', label: 'Bali' },
 ] as const;
 
 export function AccountDetailsForm(): React.JSX.Element {
@@ -35,32 +37,32 @@ export function AccountDetailsForm(): React.JSX.Element {
           <Grid container spacing={3}>
             <Grid md={6} xs={12}>
               <FormControl fullWidth required>
-                <InputLabel>First name</InputLabel>
-                <OutlinedInput defaultValue="Sofia" label="First name" name="firstName" />
+                <InputLabel>Nama Depan</InputLabel>
+                <OutlinedInput defaultValue="Digistar" label="First name" name="firstName" />
               </FormControl>
             </Grid>
             <Grid md={6} xs={12}>
               <FormControl fullWidth required>
-                <InputLabel>Last name</InputLabel>
-                <OutlinedInput defaultValue="Rivers" label="Last name" name="lastName" />
+                <InputLabel>Nama Belakang</InputLabel>
+                <OutlinedInput defaultValue="Kece" label="Last name" name="lastName" />
               </FormControl>
             </Grid>
             <Grid md={6} xs={12}>
               <FormControl fullWidth required>
-                <InputLabel>Email address</InputLabel>
-                <OutlinedInput defaultValue="sofia@devias.io" label="Email address" name="email" />
+                <InputLabel>Alamat Email</InputLabel>
+                <OutlinedInput defaultValue="kel48@digistar.id" label="Email address" name="email" />
               </FormControl>
             </Grid>
             <Grid md={6} xs={12}>
               <FormControl fullWidth>
-                <InputLabel>Phone number</InputLabel>
-                <OutlinedInput label="Phone number" name="phone" type="tel" />
+                <InputLabel>No Telepon</InputLabel>
+                <OutlinedInput label="No Telepon" name="phone" type="tel" />
               </FormControl>
             </Grid>
             <Grid md={6} xs={12}>
               <FormControl fullWidth>
-                <InputLabel>State</InputLabel>
-                <Select defaultValue="New York" label="State" name="state" variant="outlined">
+                <InputLabel>Provinsi</InputLabel>
+                <Select defaultValue="Jawa Timur" label="State" name="state" variant="outlined">
                   {states.map((option) => (
                     <MenuItem key={option.value} value={option.value}>
                       {option.label}
@@ -71,7 +73,7 @@ export function AccountDetailsForm(): React.JSX.Element {
             </Grid>
             <Grid md={6} xs={12}>
               <FormControl fullWidth>
-                <InputLabel>City</InputLabel>
+                <InputLabel>Kota</InputLabel>
                 <OutlinedInput label="City" />
               </FormControl>
             </Grid>

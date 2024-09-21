@@ -41,7 +41,7 @@ export function Layout({ children }: LayoutProps): React.JSX.Element {
                 Box
               </Box>
             </Typography>
-            <Typography color="black" align="center" variant="subtitle1">
+            <Typography color="darkslategrey" align="center" variant="subtitle1">
               Inovasi AI untuk Keputusan Bisnis Akurat Berbasis Data
             </Typography>
           </Stack>
