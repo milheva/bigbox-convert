@@ -17,7 +17,8 @@ import dayjs from 'dayjs';
 
 const statusMap = {
   pending: { label: 'Pending', color: 'warning' },
-  delivered: { label: 'Delivered', color: 'success' },
+  done: { label: 'Done', color: 'success' },
+  failed: { label: 'Failed', color: 'error' },
   refunded: { label: 'Refunded', color: 'error' },
 } as const;
 
@@ -25,7 +26,7 @@ export interface Order {
   id: string;
   customer: { name: string };
   amount: number;
-  status: 'pending' | 'delivered' | 'refunded';
+  status: 'pending' | 'done' | 'failed';
   createdAt: Date;
 }
 
@@ -36,17 +37,22 @@ export interface LatestOrdersProps {
 
 export function LatestOrders({ orders = [], sx }: LatestOrdersProps): React.JSX.Element {
   return (
-    <Card sx={sx}>
-      <CardHeader title="Latest orders" />
+    <Card sx={{ width: '100%', minWidth: 1210 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', p: 2 }}>
+        <CardHeader title="File Management" sx={{ p: 0 }} />
+        <Button variant="contained" color="primary" sx={{ mr: 2 }}>
+          Upload
+        </Button>
+      </Box>
       <Divider />
       <Box sx={{ overflowX: 'auto' }}>
         <Table sx={{ minWidth: 800 }}>
           <TableHead>
             <TableRow>
               <TableCell>Order</TableCell>
-              <TableCell>Customer</TableCell>
-              <TableCell sortDirection="desc">Date</TableCell>
+              <TableCell>File Name</TableCell>
               <TableCell>Status</TableCell>
+              <TableCell sortDirection="desc">Created At</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -57,10 +63,10 @@ export function LatestOrders({ orders = [], sx }: LatestOrdersProps): React.JSX.
                 <TableRow hover key={order.id}>
                   <TableCell>{order.id}</TableCell>
                   <TableCell>{order.customer.name}</TableCell>
-                  <TableCell>{dayjs(order.createdAt).format('MMM D, YYYY')}</TableCell>
                   <TableCell>
                     <Chip color={color} label={label} size="small" />
                   </TableCell>
+                  <TableCell>{dayjs(order.createdAt).format('MMM D, YYYY')}</TableCell>
                 </TableRow>
               );
             })}
