@@ -10,10 +10,10 @@ function generateToken(): string {
 
 const user = {
   id: 'USR-000',
-  avatar: '/assets/avatar.png',
-  firstName: 'Sofia',
-  lastName: 'Rivers',
-  email: 'sofia@devias.io',
+  avatar: '/assets/bigbox-logo.svg',
+  firstName: 'Digistar',
+  lastName: 'Kece',
+  email: 'kel48@digistar.id',
 } satisfies User;
 
 export interface SignUpParams {
@@ -57,7 +57,7 @@ class AuthClient {
     // Make API request
 
     // We do not handle the API, so we'll check if the credentials match with the hardcoded ones.
-    if (email !== 'sofia@devias.io' || password !== 'Secret1') {
+    if (email !== 'kel48@digistar.id' || password !== 'digistar48') {
       return { error: 'Invalid credentials' };
     }
 
