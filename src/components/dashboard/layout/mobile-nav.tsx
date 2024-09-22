@@ -80,8 +80,8 @@ export function MobileNav({ open, onClose }: MobileNavProps): React.JSX.Element 
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <Box
             component="img"
-            alt="Pro version"
-            src="/assets/devias-kit-pro.png"
+            alt="help desk"
+            src="/assets/question-and-answer.svg"
             sx={{ height: 'auto', width: '160px' }}
           />
         </Box>

@@ -55,7 +55,7 @@ export function SideNav(): React.JSX.Element {
           <Logo color="light" height={32} width={122} />
         </Box>
       </Stack>
-      
+
       <Divider sx={{ borderColor: 'var(--mui-palette-neutral-700)' }} />
       <Box component="nav" sx={{ flex: '1 1 auto', p: '12px' }}>
         {renderNavItems({ pathname, items: navItems })}
@@ -73,8 +73,8 @@ export function SideNav(): React.JSX.Element {
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <Box
             component="img"
-            alt="Pro version"
-            src="/assets/devias-kit-pro.png"
+            alt="help desk"
+            src="/assets/question-and-answer.svg"
             sx={{ height: 'auto', width: '160px' }}
           />
         </Box>
