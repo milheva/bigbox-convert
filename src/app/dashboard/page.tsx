@@ -5,6 +5,7 @@ import dayjs from 'dayjs';
 
 import { config } from '@/config';
 import { LatestOrders } from '@/components/dashboard/overview/latest-orders';
+
 export const metadata = { title: `Overview | Dashboard | ${config.site.name}` } satisfies Metadata;
 
 export default function Page(): React.JSX.Element {
